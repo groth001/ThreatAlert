@@ -51,6 +51,10 @@ Go to "Authentication" in the left side pane under Develop and then either click
 
 In the left pane, click the Gear icon next to Project Overview to bring up Project Settings. Go to the Service accounts tab and click the "Generate new private key" button. Put the downloaded certificate in a safe place on the Raspberry Pi. Open the python program 'firebase-alert.py' in a text editor and find the line marked with ## at the end of it. Replace the string in the function call with the path to the certificate.
 
-
+Finally, register the ThreatAlert app with the Firebase project. Go to "Project Overview" in the left pane and click the Android button (the middle one) in the blue colored header. Enter "com.firebase.android.threatalert" (no quotes) for the Android package name. Use the Java JDK tool called 'keytool' to generate a SHA-1 Hash.
+```
+keytool -exportcert -list -v -alias androiddebugkey -keystore ./.android/debug.keystore
+```
+Enter the SHA-1 hash for Debug signing certificate SHA-1 and click the "Register app" button. Download the config file named 'google-services.json' and place it in the app folder of the Github repository of the ThreatAlert source code.
 
 ## Getting Started
