@@ -12,6 +12,7 @@ ThreatAlert is a native Android app that integrates with Google Firebase's Cloud
 
 * [Git](https://git-scm.com/)
 * [Android Studio](https://developer.android.com/studio)
+* [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 * [Snort 2.9](https://www.snort.org/)
 * [Node-Red](https://nodered.org/)
 * [Python 3](https://www.python.org/downloads/)
@@ -44,14 +45,17 @@ git clone https://github.com/groth001/ThreatAlert
 cd ./ThreatAlert/RaspPiFiles
 ```
 Transfer the two files 'firebase-alert.py' and 'flows_raspberrypi.json' to the Raspberry Pi. The Python program file may go and be run from anywhere (the home directory works fine). The json file containing the Node-Red flow must be placed in the '.node-red' directory overwriting the existing file from the installation.
- 
+
+Download and install the latest version of the (Java Development Kit)[https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html] on the machine with the source code repository.
+
+
 Go to [Google Firebase](https://firebase.google.com/) in a browser, create an account, and sign in. Click on "Go to console" in the upper right corner. Click on the "Add project" square and give the project a name (ThreatAlert or any other name). Set the region to your location, check the box to accept the terms, and click the "Create Project" button. Go to Database in the left window pane menu under Develop and click "Create database" in the orange header to make a new Cloud Firestore database. In the pop-up window, leave the security rules as "Start in locked mode" and click the "Enable" button.
 
 Go to "Authentication" in the left side pane under Develop and then either click "Set up sign-in method" under the Users tab or click the Sign-in method tab. Select "Email/Password" and enable it with the upper slider in the pop-up window. Leave the passwordless sign-in option disabled and click Save.
 
 In the left pane, click the Gear icon next to Project Overview to bring up Project Settings. Go to the Service accounts tab and click the "Generate new private key" button. Put the downloaded certificate in a safe place on the Raspberry Pi. Open the python program 'firebase-alert.py' in a text editor and find the line marked with ## at the end of it. Replace the string in the function call with the path to the certificate.
 
-Finally, register the ThreatAlert app with the Firebase project. Go to "Project Overview" in the left pane and click the Android button (the middle one) in the blue colored header. Enter "com.firebase.android.threatalert" (no quotes) for the Android package name. Use the Java JDK tool called 'keytool' to generate a SHA-1 Hash.
+Finally, register the ThreatAlert app with the Firebase project. Go to "Project Overview" in the left pane and click the Android button (the middle one) in the blue colored header. Enter "com.firebase.android.threatalert" (no quotes) for the Android package name. Use the Java JDK tool called 'keytool' to generate a SHA-1 Hash. The tool is located in the bin folder of the JDK installation.
 ```
 keytool -exportcert -list -v -alias androiddebugkey -keystore ./.android/debug.keystore
 ```
