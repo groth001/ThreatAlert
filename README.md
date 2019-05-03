@@ -61,4 +61,18 @@ keytool -exportcert -list -v -alias androiddebugkey -keystore ./.android/debug.k
 ```
 Enter the SHA-1 hash for Debug signing certificate SHA-1 and click the "Register app" button. Download the config file named 'google-services.json' and place it in the app folder of the Github repository of the ThreatAlert source code.
 
+In the Android Studio launch window, select open an existing an project and select the ThreatAlert source code repository root folder. Follow the steps in the [Android Developer's guide](https://developer.android.com/training/basics/firstapp/running-app) to build the app and push it to your phone.
+
 ## Getting Started
+
+On the Raspberry Pi start Node-Red, the Python backend service, and Snort in different terminal windows.
+```
+node-red-start
+python3 firebase-alert.py
+sudo snort -A fast -i eth0 -u snort -g snort -c /etc/snort/snort.conf
+```
+Replace 'eth0' if necessary in the snort command with whatever interface you've set for the Raspberry Pi to connect to the router.
+
+When a Snort alert is triggered, it will be automatically uploaded to the Cloud Firestone database via Node-Red and Python backend service.
+
+Open the ThreatAlert app on the phone and navigate to the User Registration. Submit an email and password to register a new account and you will be automatically logged in. Alerts are sorted in the cloud database by the day they are triggered. Click the Alerts button to bring up a date search. Submit a date and the app will load all of the alerts that were generated on that date or at least so far if searching for the current day. The statistical performance data feature of the app has not been implemented yet.
