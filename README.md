@@ -18,8 +18,26 @@ ThreatAlert is a native Android app that integrates with Google Firebase's Cloud
 
 ## Installation
 
-* `git clone https://github.com/groth001/ThreatAlert
-* 
+Setup a new Raspberry Pi 3 B+ by the following the instruction guide that comes with the kit or repurpose an existing one. Install the Raspbian OS and be sure to adjust the keyboard settings from the default UK settings to match your region and style of keyboard. Ensure that Python 3.x and pip3 is installed.
+```
+which python3
+which pip3
+sudo apt-get install python3
+sudo apt-get install pip3
+```
+Install the following Google Firebase Python module.
+```
+pip3 install --upgrade firebase-admin
+```
+Install the most recent version of Snort 2.9 on the Raspberry Pi and configure it using this tutorial guide on [UpCloud](https://upcloud.com/community/tutorials/installing-snort-on-debian/).
+Additionally, install the IoT wiring framework [Node-Red](https://nodered.org/docs/hardware/raspberrypi) using the Raspberry Pi specific guide.
+
+Go to [Google Firebase](https://firebase.google.com/) in a browser, create an account, and sign in. Click on "Go to console" in the upper right corner. Click on the "Add project" square and give the project a name (ThreatAlert or any other name). Set the region to your location, check the box to accept the terms, and click the "Create Project" button.
+
+Download and install [Git](https://git-scm.com/) on another machine. Retrieve the app source code from this repository from the command line.
+```
+git clone https://github.com/groth001/ThreatAlert
+```
 
 
 ## Getting Started
