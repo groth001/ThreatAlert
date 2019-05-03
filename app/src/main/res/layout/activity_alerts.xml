@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlertsActivity">
+
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="715dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="User Email Here"
+            android:id="@+id/textViewUserEmail"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/textViewDate"
+            android:hint="Select a Date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:paddingLeft="125dp"
+            android:textSize="24sp"
+            android:ems="10"
+            tools:layout_editor_absoluteX="98dp"
+            tools:layout_editor_absoluteY="475dp" />
+
+        <Button
+            android:layout_margin="15dp"
+            android:id="@+id/buttonSearch"
+            android:text="Search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnClick"/>
+
+        <Button
+            android:layout_margin="15dp"
+            android:id="@+id/buttonBack"
+            android:text="Back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnClick"/>
+
+        <Button
+            android:layout_margin="15dp"
+            android:id="@+id/buttonLogout"
+            android:text="Logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnClick"/>
+
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
