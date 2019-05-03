@@ -73,6 +73,6 @@ sudo snort -A fast -i eth0 -u snort -g snort -c /etc/snort/snort.conf
 ```
 Replace 'eth0' if necessary in the snort command with whatever interface you've set for the Raspberry Pi to connect to the router. You may run each of these as a background process and configure the Pi to start them upon booting up if desired.
 
-When a Snort alert is triggered, it will be automatically uploaded to the Cloud Firestone database via Node-Red and Python backend service.
+When a Snort alert is triggered, it will be automatically uploaded to the Cloud Firestore database via Node-Red and Python backend service.
 
 Open the ThreatAlert app on the phone and navigate to the User Registration. Submit an email and password to register a new account and you will be automatically logged in. Alerts are sorted in the cloud database by the day they are triggered. Click the Alerts button to bring up a date search. Submit a date and the app will load all of the alerts that were generated on that date or at least so far if searching for the current day. The statistical performance data feature of the app has not been implemented yet.
