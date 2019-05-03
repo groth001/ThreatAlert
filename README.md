@@ -46,7 +46,7 @@ cd ./ThreatAlert/RaspPiFiles
 ```
 Transfer the two files 'firebase-alert.py' and 'flows_raspberrypi.json' to the Raspberry Pi. The Python program file may go and be run from anywhere (the home directory works fine). The json file containing the Node-Red flow must be placed in the '.node-red' directory overwriting the existing file from the installation.
 
-Download and install the latest version of the (Java Development Kit)[https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html] on the machine with the source code repository.
+Download and install the latest version of the [Java Development Kit](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) on the machine with the source code repository.
 
 
 Go to [Google Firebase](https://firebase.google.com/) in a browser, create an account, and sign in. Click on "Go to console" in the upper right corner. Click on the "Add project" square and give the project a name (ThreatAlert or any other name). Set the region to your location, check the box to accept the terms, and click the "Create Project" button. Go to Database in the left window pane menu under Develop and click "Create database" in the orange header to make a new Cloud Firestore database. In the pop-up window, leave the security rules as "Start in locked mode" and click the "Enable" button.
@@ -71,7 +71,7 @@ node-red-start
 python3 firebase-alert.py
 sudo snort -A fast -i eth0 -u snort -g snort -c /etc/snort/snort.conf
 ```
-Replace 'eth0' if necessary in the snort command with whatever interface you've set for the Raspberry Pi to connect to the router.
+Replace 'eth0' if necessary in the snort command with whatever interface you've set for the Raspberry Pi to connect to the router. You may run each of these as a background process and configure the Pi to start them upon booting up if desired.
 
 When a Snort alert is triggered, it will be automatically uploaded to the Cloud Firestone database via Node-Red and Python backend service.
 
